@@ -1,0 +1,147 @@
+/*   General styles    */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper {
+  width: 1440px;
+  height: fit-content;
+  padding: 96px 0 96px 64px;
+  background-color: #f3ede5;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+/*   Swiper slides styles    */
+.swiper-slide {
+  width: 468px;
+  height: 585px;
+  flex-shrink: 0;
+}
+
+.swiper-slide__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*   Navigation btns styles    */
+.navigation-buttons-container {
+  width: 1340px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 32px;
+  height: 32px;
+  background-color: black;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev,
+.next {
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+
+/*   Swiper toggle btn styles    */
+.swipper-toggle-btn {
+  cursor: pointer;
+  border: 1px solid #000;
+  background-color: transparent;
+  padding: 20px 12px;
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+}
+
+/*    Responsive Styles    */
+@media (max-width: 375px) {
+  .swiper {
+    width: 375px;
+    height: fit-content;
+    padding: 64px 0 64px 16px;
+  }
+
+  .swiper-wrapper {
+    width: 343px;
+  }
+
+  .navigation-buttons-container {
+    width: 335px;
+  }
+
+  .swiper-slide {
+    width: 343px;
+    height: 428px;
+  }
+
+  .swipper-toggle-btn {
+    padding: 12px 8px;
+  }
+
+  .swiper-slide.swiper-slide-prev .swiper-slide__image {
+    border-radius: 12px;
+  }
+
+  .swiper-slide.swiper-slide-next .swiper-slide__image {
+    border-radius: 12px;
+  }
+
+  .swiper-slide[aria-label="2 / 4"] .swiper-slide__image {
+    border-radius: 12px;
+  }
+
+  .swiper-slide.swiper-slide-active[aria-label="2 / 4"] .swiper-slide__image {
+    border-radius: 0px;
+  }
+
+  .swiper-button-prev {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .swiper-button-prev.show-prev {
+    visibility: visible;
+    pointer-events: visible;
+  }
+
+  .swiper-button-next {
+    visibility: visible;
+    pointer-events: visible;
+  }
+
+  .swiper-button-next.remove-next {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
